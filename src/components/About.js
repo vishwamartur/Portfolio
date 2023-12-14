@@ -11,9 +11,9 @@ export default function About() {
         <div className="col-lg-6 col-md-12">
           <h2 className="text-primary">About Me</h2>
           <p className="lead">
-            Hi, I'm John Doe, a full-stack web developer based in Bengaluru, India. I love creating
+            Hi, Vishwanath M, a Product developer based in Bengaluru, India. I love creating
             beautiful and functional websites using modern technologies like React, Node, MongoDB,
-            etc. I have over 5 years of experience in web development and have worked on various
+            etc. I have over 2 years of experience in web development and have worked on various
             projects ranging from e-commerce, social media, education, and more.
           </p>
           <p className="lead">

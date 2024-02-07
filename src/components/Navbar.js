@@ -1,6 +1,6 @@
 // src/components/Navbar.js
 import React from "react";
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link } from "react-scroll";
 
 export default function Navbar() {
   return (

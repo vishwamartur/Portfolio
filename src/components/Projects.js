@@ -5,22 +5,22 @@ export default function Projects() {
   // You can store your projects data in an array of objects
   const projects = [
     {
-      title: "E-commerce Website",
-      description: "A full-stack e-commerce website built with React, Node, Express, and MongoDB. It features user authentication, product listing, shopping cart, checkout, payment, and order history.",
-      image: "/ecommerce.jpg", // You will need to save your project images in the public folder and use the relative path
-      link: "https://ecommerce.com", // You can use the link to your live demo or GitHub repository
+      // title: "E-commerce Website",
+      // description: "A full-stack e-commerce website built with React, Node, Express, and MongoDB. It features user authentication, product listing, shopping cart, checkout, payment, and order history.",
+      // image: "/ecommerce.jpg", // You will need to save your project images in the public folder and use the relative path
+      // link: "https://ecommerce.com", // You can use the link to your live demo or GitHub repository
     },
     {
-      title: "Social Media App",
-      description: "A full-stack social media app built with React, Node, Express, and MongoDB. It features user authentication, profile creation, post creation, likes, comments, and followers.",
-      image: "/social.jpg",
-      link: "https://social.com",
+      // title: "Social Media App",
+      // description: "A full-stack social media app built with React, Node, Express, and MongoDB. It features user authentication, profile creation, post creation, likes, comments, and followers.",
+      // image: "/social.jpg",
+      // link: "https://social.com",
     },
     {
-      title: "Education Platform",
-      description: "A full-stack education platform built with React, Node, Express, and MongoDB. It features user authentication, course creation, enrollment, video streaming, quizzes, and certificates.",
-      image: "/education.jpg",
-      link: "https://education.com",
+      // title: "Education Platform",
+      // description: "A full-stack education platform built with React, Node, Express, and MongoDB. It features user authentication, course creation, enrollment, video streaming, quizzes, and certificates.",
+      // image: "/education.jpg",
+      // link: "https://education.com",
     },
   ];
 

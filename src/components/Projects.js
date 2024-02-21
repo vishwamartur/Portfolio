@@ -19,7 +19,7 @@ export default function Projects() {
     {
       title: "Cuberto-Clone",
       description: "Website Clone and made with js Gsap cdn and locomotive js",
-      image: "/education.jpg",
+      image: "/cuberto-copy.png",
       link: "https://cuberto-copy.netlify.app/",
     },
   ];

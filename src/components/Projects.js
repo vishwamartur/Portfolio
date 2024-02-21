@@ -17,10 +17,10 @@ export default function Projects() {
       link: "https://social.com",
     },
     {
-      title: "Education Platform",
-      description: "A full-stack education platform built with React, Node, Express, and MongoDB. It features user authentication, course creation, enrollment, video streaming, quizzes, and certificates.",
+      title: "Cuberto-Clone",
+      description: "Website Clone with js Gsap cdn and locomotive js",
       image: "/education.jpg",
-      link: "https://education.com",
+      link: "https://cuberto-copy.netlify.app/",
     },
   ];
 

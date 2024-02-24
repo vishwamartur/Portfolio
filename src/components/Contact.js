@@ -32,13 +32,13 @@ export default function Contact() {
   return (
     <section id="contact" className="container py-5">
       <h2 className="text-primary">Contact</h2>
-      <p className="lead">
-        If you want to get in touch with me, you can fill out the contact form below and I will get
-        back to you as soon as possible. You can also find my email, phone, and social media links
-        at the bottom of this page.
+      <p className="lead text-black">
+        If you want to get in touch with me, you can fill out the contact form
+        below and I will get back to you as soon as possible. You can also find
+        my email, phone, and social media links at the bottom of this page.
       </p>
       <form onSubmit={handleSubmit}>
-        <div className="form-group">
+        <div className="form-group text-black">
           <label htmlFor="name">Name</label>
           <input
             type="text"
@@ -50,7 +50,7 @@ export default function Contact() {
             required
           />
         </div>
-        <div className="form-group">
+        <div className="form-group text-black">
           <label htmlFor="email">Email</label>
           <input
             type="email"
@@ -62,7 +62,7 @@ export default function Contact() {
             required
           />
         </div>
-        <div className="form-group">
+        <div className="form-group text-black">
           <label htmlFor="message">Message</label>
           <textarea
             className="form-control"

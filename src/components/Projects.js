@@ -5,9 +5,9 @@ export default function Projects() {
   // You can store your projects data in an array of objects
   const projects = [
     {
-      title: "E-commerce Website",
+      title: "E-commerce Website Nike ",
       description:
-        "A full-stack e-commerce website built with React, Node, Express, and MongoDB. It features user authentication, product listing, shopping cart, checkout, payment, and order history.",
+        "An e-commerce website built with React, Node. Best UI, product listing.",
       image: "/ecommerce.jpg", // You will need to save your project images in the public folder and use the relative path
       link: "https://nike-clone-byvm.netlify.app/", // You can use the link to your live demo or GitHub repository
     },

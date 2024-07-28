@@ -1,84 +1,137 @@
-// src/components/Contact.js
 import React, { useState } from "react";
-import axios from "axios"; // You will need to install axios using the command npm install axios and import it into the Contact.js file
+import { sendEmail } from "../utils/emailApi";
 
-export default function Contact() {
-  // You can use the useState hook to manage the state of the contact form
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
   const [status, setStatus] = useState("");
 
-  // You can use the handleSubmit function to handle the form submission
-  const handleSubmit = (e) => {
-    e.preventDefault(); // Prevent the default behavior of the form
-    setStatus("Sending..."); // Set the status to indicate the form is being sent
-    // You can use axios to send a POST request to your backend server with the form data
-    axios
-      .post("/api/contact", { name, email, message })
-      .then((response) => {
-        // If the response is successful, clear the form fields and set the status to success
-        setName("");
-        setEmail("");
-        setMessage("");
-        setStatus("Success! Thank you for your message.");
-      })
-      .catch((error) => {
-        // If the response is unsuccessful, set the status to error
-        setStatus("Error! Something went wrong. Please try again.");
-      });
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("Sending...");
+
+    console.log("Form Data:", formData); // Debugging line
+
+    try {
+      await sendEmail(formData);
+      setStatus("Message sent successfully!");
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      console.error("Error sending email:", error);
+      setStatus("An error occurred. Please try again later.");
+    }
   };
 
   return (
-    <section id="contact" className="container py-5">
-      <h2 className="text-primary">Contact</h2>
-      <p className="lead text-black">
-        If you want to get in touch with me, you can fill out the contact form
-        below and I will get back to you as soon as possible. You can also find
-        my email, phone, and social media links at the bottom of this page.
-      </p>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group text-black">
-          <label htmlFor="name">Name</label>
+    <div style={{ maxWidth: "600px", margin: "0 auto", padding: "20px" }}>
+      <h1
+        style={{ fontSize: "24px", fontWeight: "bold", marginBottom: "20px" }}
+      >
+        Contact Me
+      </h1>
+      <div
+        style={{
+          border: "1px solid #ccc",
+          borderRadius: "8px",
+          padding: "20px",
+        }}
+      >
+        <h2
+          style={{
+            fontSize: "20px",
+            fontWeight: "semibold",
+            marginBottom: "15px",
+          }}
+        >
+          Get in Touch
+        </h2>
+        <form
+          onSubmit={handleSubmit}
+          style={{ display: "flex", flexDirection: "column", gap: "15px" }}
+        >
+          <label htmlFor="name" style={{ fontSize: "16px" }}>
+            Name
+          </label>
           <input
             type="text"
-            className="form-control"
             id="name"
             name="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            value={formData.name}
+            onChange={handleChange}
+            style={{
+              padding: "10px",
+              borderRadius: "4px",
+              border: "1px solid #ccc",
+              fontSize: "16px",
+            }}
             required
           />
-        </div>
-        <div className="form-group text-black">
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email" style={{ fontSize: "16px" }}>
+            Email
+          </label>
           <input
             type="email"
-            className="form-control"
             id="email"
             name="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={formData.email}
+            onChange={handleChange}
+            style={{
+              padding: "10px",
+              borderRadius: "4px",
+              border: "1px solid #ccc",
+              fontSize: "16px",
+            }}
             required
           />
-        </div>
-        <div className="form-group text-black">
-          <label htmlFor="message">Message</label>
+          <label htmlFor="message" style={{ fontSize: "16px" }}>
+            Message
+          </label>
           <textarea
-            className="form-control"
             id="message"
             name="message"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            rows="5"
+            value={formData.message}
+            onChange={handleChange}
+            style={{
+              padding: "10px",
+              borderRadius: "4px",
+              border: "1px solid #ccc",
+              fontSize: "16px",
+              height: "100px",
+            }}
             required
-          ></textarea>
-        </div>
-        <button type="submit" className="btn btn-primary">
-          Send
-        </button>
-        <p className="mt-3">{status}</p>
-      </form>
-    </section>
+          />
+          <button
+            type="submit"
+            style={{
+              backgroundColor: "#007bff",
+              color: "white",
+              padding: "10px 15px",
+              border: "none",
+              borderRadius: "4px",
+              cursor: "pointer",
+              fontSize: "16px",
+            }}
+          >
+            Send Message
+          </button>
+        </form>
+        {status && (
+          <p style={{ marginTop: "15px", textAlign: "center" }}>{status}</p>
+        )}
+      </div>
+    </div>
   );
-}
+};
+
+export default Contact;

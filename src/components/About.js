@@ -9,7 +9,7 @@ function ImageModel({ imageUrl }) {
   const ref = useRef();
   const texture = useLoader(THREE.TextureLoader, imageUrl);
 
-  useFrame(() => (ref.current.rotation.y += 0.005));
+  useFrame(() => (ref.current.rotation.y += 0.0005));
 
   return (
     <mesh ref={ref}>
@@ -26,8 +26,8 @@ export default function About() {
         <div className="col-lg-6 col-md-12">
           <Canvas>
             <OrbitControls enableZoom={false} />
-            <ambientLight intensity={0.5} />
-            <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
+            <ambientLight intensity={0.1} />
+            <spotLight position={[5, 5, 5]} angle={0.001} penumbra={1} />
             <ImageModel imageUrl={profileImage} />
           </Canvas>
         </div>
